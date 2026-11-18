@@ -5,7 +5,7 @@
 
 **Role:** Sole developer: design, implementation, testing and documentation
 **Stack:** Python, pandas, Excel/openpyxl, pytest, Azure Functions (HTTP trigger), SharePoint, Git/GitHub (PR-based workflow), Power Automate (planned)
-**Timeframe:** _[fill in]_
+**Timeframe:** 2026
 
 ---
 
