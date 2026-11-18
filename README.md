@@ -157,11 +157,11 @@ AZURE_CLOUD_IO_CONTRACT.md      cloud I/O specification
 - Expanding the framework to more business units, each with its own sources and rules
 
 ## Impact
-_Replace with your real numbers:_
-- Monthly prep time cut from **_X_ hours to _Y_**
-- **_N_** manual uploads removed from the monthly cycle
-- **_N_** employees' payouts calculated per run
-- Every payout traceable to its source files through hashed run manifests
+- **Less monthly work for the business:** the routine monthly upload went from a full set of workbooks to essentially one CRM bookings export. Roster, goals and incentive terms are reused until they change, and fiscal-YTD sales and opportunity-owner summaries are no longer uploaded at all because the engine derives them.
+- **Spreadsheet rebuilds replaced by one command:** sales totals, attainment, payout curves, SPIFFs, guarantees, carryforward and manager rollups now come from a single deterministic run instead of manual workbook steps.
+- **Audit-ready by default:** every payout can be traced to the exact input files through SHA-256 hashed run manifests, and approved months are locked so history can't change silently.
+- **Errors caught before payout:** missing or duplicate files, invalid probabilities, unknown owners and rollup mismatches surface as PASS / WARNING / FAIL results instead of being found after payroll.
+- **Foundation for scale:** cloud entry points and written intake contracts mean more business units, and an AI assistant, can plug into the same approved outputs.
 
 ## What I learned
-_[2–3 sentences in your own voice, e.g. designing input contracts around how business users actually work, keeping AI on top of a deterministic core rather than in it, building for auditability from day one.]_
+Most of the value came from designing the input contract around how business users actually work, not from the calculations. Asking people for less and deriving the rest removed both effort and a whole class of errors. I also learned to put AI on top of a deterministic, tested core instead of inside it: compensation has to be explainable and reproducible, so the engine owns the numbers and any assistant only explains approved results. And building auditability in from day one, with hashes, locked periods and explicit validation, made the system much easier to trust and to change.
